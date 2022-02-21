@@ -6,13 +6,13 @@
 /*   By: eayasli <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:13:30 by eayasli           #+#    #+#             */
-/*   Updated: 2022/01/10 17:10:23 by eayasli          ###   ########.fr       */
+/*   Updated: 2022/02/04 14:00:49 by eayasli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	characterquery(char c, char const *set)
+int	charactersorgu(char c, char const *set)
 {
 	int	i;
 
@@ -25,6 +25,7 @@ static int	characterquery(char c, char const *set)
 	}
 	return (0);
 }
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
@@ -35,10 +36,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	if (!s1 ||!set)
 		return (NULL);
-	while (s1[start] && characterquery(s1[start], set))
+	while (s1[start] && charactersorgu(s1[start], set))
 		start++;
 	end = ft_strlen(s1);
-	while (end > start && characterquery(s1[end], set))
+	while (end > start && charactersorgu(s1[end - 1], set))
 		end--;
 	str = (char *)malloc(sizeof(*s1) * (end - start + 1));
 	if (!str)

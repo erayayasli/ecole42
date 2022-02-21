@@ -6,7 +6,7 @@
 /*   By: eayasli <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:59:42 by eayasli           #+#    #+#             */
-/*   Updated: 2022/01/11 17:59:44 by eayasli          ###   ########.fr       */
+/*   Updated: 2022/02/08 12:10:08 by eayasli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	int	n;
 
+	if (!s)
+		return ;
 	n = 0;
 	while (s[n])
 		ft_putchar_fd(s[n++], fd);

@@ -6,7 +6,7 @@
 /*   By: eayasli <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 12:06:34 by eayasli           #+#    #+#             */
-/*   Updated: 2022/01/10 15:12:29 by eayasli          ###   ########.fr       */
+/*   Updated: 2022/02/08 17:18:06 by eayasli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		return (0);
 	if (ft_strlen(s) <= start)
 	{
-		new = ft_calloc(1,1);
-		return(new);
+		new = ft_calloc(1, 1);
+		return (new);
 	}
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
 	new = malloc(len + 1);
 	if (!new)
 		return (0);

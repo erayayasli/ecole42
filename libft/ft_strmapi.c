@@ -6,7 +6,7 @@
 /*   By: eayasli <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 12:20:24 by eayasli           #+#    #+#             */
-/*   Updated: 2022/01/13 13:54:26 by eayasli          ###   ########.fr       */
+/*   Updated: 2022/02/08 13:00:55 by eayasli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str;
 	int		i;
 
+	if (!s)
+		return (0);
 	i = -1;
 	str = ft_strdup(s);
 	if (!str)

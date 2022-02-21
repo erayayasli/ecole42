@@ -6,7 +6,7 @@
 /*   By: eayasli <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 15:39:26 by eayasli           #+#    #+#             */
-/*   Updated: 2022/01/13 13:42:52 by eayasli          ###   ########.fr       */
+/*   Updated: 2022/02/08 12:11:07 by eayasli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -32,4 +32,3 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	result[ri] = '\0';
 	return (result);
 }
-

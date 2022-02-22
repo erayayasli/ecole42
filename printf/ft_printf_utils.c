@@ -9,27 +9,48 @@ int printstr(const char *str)
     int i;
 
     i = 0;
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
     while (str[i])
     {
         write(1, &str[i++],1);
     }
     return (i);
 }
-int printnbr(long a)
+int printnbr(int a)
 {
     int prtnbr;
 
     prtnbr = 0;
+	if (a == -2147483648)
+	{
+		prtnbr += printstr("-2147483648");
+		return (prtnbr);
+	}
     if (a < 0)
     {
-        prtnbr += printchar(45);
-        a = -a;
+        prtnbr += printchar('-');
+        a *= -1;
     }
     if (a > 9)
         prtnbr += printnbr(a / 10);
     prtnbr += printchar(a % 10 + '0');
     return (prtnbr);
 }
+int printunbr(unsigned int a)
+{
+    int prtnbr;
+
+    prtnbr = 0;
+    if (a > 9)
+        prtnbr += printnbr(a / 10);
+    prtnbr += printchar(a % 10 + '0');
+    return (prtnbr);
+}
+
 int printdecimal(unsigned int n, char c)
 {
     int prtnbr;

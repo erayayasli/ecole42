@@ -14,11 +14,11 @@ int organizer(char a, va_list arg)
 		prtnbr += printpointer(va_arg(arg, unsigned long int));
 	}
 	else if (a == 'd')
-		prtnbr += printnbr(va_arg(arg, long));
+		prtnbr += printnbr(va_arg(arg, int));
 	else if (a == 'i')
-        prtnbr += printnbr(va_arg(arg, unsigned long));
+        prtnbr += printnbr(va_arg(arg, int));
 	else if (a == 'u')
-		prtnbr += printnbr(va_arg(arg, unsigned long));
+		prtnbr += printunbr(va_arg(arg, unsigned int));
 	else if (a == 'x' || a == 'X')
 		prtnbr += printdecimal(va_arg(arg, int), a);		
 	else if (a == '%')
@@ -47,12 +47,4 @@ int ft_printf(const char *str , ...)
 	}
 	va_end(arg);
 	return (prtnbr);
-}
-
-int	main(){
-	int a = -23;
-
-	ft_printf("%d",a);
-
-
 }

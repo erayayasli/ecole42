@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_others.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eayasli <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 10:44:59 by eayasli           #+#    #+#             */
-/*   Updated: 2022/02/24 12:28:40 by eayasli          ###   ########.fr       */
+/*   Created: 2022/02/24 12:28:19 by eayasli           #+#    #+#             */
+/*   Updated: 2022/02/24 12:29:59 by eayasli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ft_printf.h"
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+int	printpercent(void)
+{
+	write(1, "%", 1);
+	return (1);
+}
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
+int	printpointer(unsigned long int a)
+{
+	int	prtnbr;
 
-int	printchar(char c);
-int	printstr(const char *str);
-int	printpercent(void);
-int	printpointer(unsigned long int n);
-int	printnbr(int n);
-int	printunbr(unsigned int n);
-int	printdecimal(unsigned int n, char c);
-int	ft_printf(const char *str, ...);
-int	organizer(char c, va_list arg);
-
-#endif
+	prtnbr = 0;
+	if (a >= 16)
+		prtnbr += printpointer(a / 16);
+	prtnbr += printchar("0123456789abcdef"[a % 16]);
+	return (prtnbr);
+}
